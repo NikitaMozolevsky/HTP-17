@@ -27,14 +27,11 @@ public class Solution {
         boolean yAxisCrossing = Math.abs(point.getY())<circle.getRadius();
         if (xAxisCrossing&&yAxisCrossing) {
             result = "X and Y axes intersect";
-        }
-        else if (xAxisCrossing) {
+        }  else if (xAxisCrossing) {
             result = "X-axis intersects";
-        }
-        else if (yAxisCrossing) {
+        }  else if (yAxisCrossing) {
             result = "Y-axis intersects";
-        }
-        else {
+        }  else {
             result = "the circle does not intersect the axis";
         }
         return result;

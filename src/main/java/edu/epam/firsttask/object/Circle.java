@@ -4,7 +4,7 @@ import edu.epam.firsttask.object.Shape;
 
 import java.util.Arrays;
 
-public class Circle {
+public class Circle extends Shape {
 
     private Point point;
     private double radius;

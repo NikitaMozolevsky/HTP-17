@@ -1,18 +1,19 @@
 package edu.epam.firsttask.parser;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parser {
 
-    public static List<Double> split(String s) {
+    private static final String REGEX_DELIMITER = "\\s+";
 
-        List<Double> doubles = "\"^\\\\s*-?\\\\d+(\\\\s+(-?\\\\d+))*\\\\s*$\";";
-        /*String[] strings = s.split("\\s+");
-        Double[] doubles = new Double[strings.length];
+    public static List<Double> parse(String str) {
+
+        String[] strings = str.split(REGEX_DELIMITER);
+        List<Double> doubles = new ArrayList<>();
         for (int i = 0; i < strings.length; i++) {
-            doubles[i] = Double.parseDouble(strings[i]);
+            doubles.add(Double.parseDouble(strings[i]));
         }
-
-        return doubles;*/
+        return doubles;
     }
 }

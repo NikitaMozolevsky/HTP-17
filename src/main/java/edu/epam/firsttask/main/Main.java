@@ -2,6 +2,7 @@ package edu.epam.firsttask.main;
 
 import edu.epam.firsttask.object.Circle;
 import edu.epam.firsttask.object.Point;
+import edu.epam.firsttask.parser.Parser;
 import edu.epam.firsttask.reader.StringFileName;
 import edu.epam.firsttask.solution.Solution;
 import edu.epam.firsttask.validator.Checker;
@@ -11,6 +12,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
 
@@ -19,6 +21,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         ArrayList<String> strings = StringFileName.reader();
         String correctString = Checker.validator(strings);
+        List<Double> doubles = Parser.parse(correctString);
         double x = doubles.get(1);
         double y = doubles.get(2);
         double radius = doubles.get(0);
