@@ -1,9 +1,7 @@
 package edu.epam.firsttask.solution;
 
-import edu.epam.firsttask.object.Circle;
-import edu.epam.firsttask.object.Point;
-import edu.epam.firsttask.object.Shape;
-import org.apache.logging.log4j.Level;
+import edu.epam.firsttask.entity.Circle;
+import edu.epam.firsttask.entity.Point;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -12,13 +10,16 @@ public class Solution {
     private static final Logger log = LogManager.getLogger();
 
     public Double circleArea (Circle circle) {
+
         return Math.pow(circle.getRadius(), 2)*Math.PI;//2 - возведение в квадрат
+
         /*return 3.14*(doubles[0]*doubles[0]);*/
     }
 
     public Double circlePerimeter (Circle circle) {
         return circle.getRadius()*2*Math.PI;
         /*return 3.14*2*doubles[0];*/
+
     }
 
     public String intersectionOfCoordinateAxes (Circle circle, Point point) {
@@ -35,6 +36,7 @@ public class Solution {
             result = "the circle does not intersect the axis";
         }
         return result;
+
     }
 
 }

@@ -1,4 +1,4 @@
-package edu.epam.firsttask.object;
+package edu.epam.firsttask.entity;
 
 public class Point {
 

@@ -1,7 +1,7 @@
 package edu.epam.firsttask.solution;
 
-import edu.epam.firsttask.object.Circle;
-import edu.epam.firsttask.object.Point;
+import edu.epam.firsttask.entity.Circle;
+import edu.epam.firsttask.entity.Point;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.*;

@@ -1,7 +1,7 @@
 package edu.epam.firsttask.main;
 
-import edu.epam.firsttask.object.Circle;
-import edu.epam.firsttask.object.Point;
+import edu.epam.firsttask.entity.Circle;
+import edu.epam.firsttask.entity.Point;
 import edu.epam.firsttask.parser.Parser;
 import edu.epam.firsttask.reader.StringFileName;
 import edu.epam.firsttask.solution.Solution;
