@@ -6,32 +6,40 @@ import java.util.Map;
 public class Warehouse {
 
     private static Warehouse warehouse = new Warehouse();
-    private static Map<Integer, ShapeStatistics> map = new HashMap<>();
+    private static Map<Integer, CircleStatistics> map = new HashMap<>();
 
     public static void setWarehouse(Warehouse warehouse) {
         Warehouse.warehouse = warehouse;
     }
 
-    public static Map<Integer, ShapeStatistics> getMap() {
+    public static Map<Integer, CircleStatistics> getMap() {
         return map;
     }
 
-    public static void setMap(Map<Integer, ShapeStatistics> map) {
+    public static void setMap(Map<Integer, CircleStatistics> map) {
         Warehouse.map = map;
     }
 
     private Warehouse() {
     }
 
-    public static Warehouse getWarehouse() {
+    public static Warehouse getInstance() {
         return warehouse;
     }
 
-    public ShapeStatistics get(Integer key) {
+    public static CircleStatistics put(Integer key, CircleStatistics value) {
+        return getMap().put(key, value);
+    }
+
+    public static CircleStatistics remove(Object key) {
+        return getMap().remove(key);
+    }
+
+    public CircleStatistics get(Integer key) {
         return map.get(key);
     }
 
-    public ShapeStatistics replace(Integer key, ShapeStatistics value) {
+    public CircleStatistics replace(Integer key, CircleStatistics value) {
         return map.replace(key, value);
     }
 }

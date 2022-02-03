@@ -1,9 +1,6 @@
 package edu.epam.firsttask.observer;
 
-import edu.epam.firsttask.entity.Point;
-import edu.epam.firsttask.entity.Shape;
-import edu.epam.firsttask.entity.ShapeStatistics;
-import edu.epam.firsttask.entity.Warehouse;
+import edu.epam.firsttask.entity.*;
 import edu.epam.firsttask.solution.Solution;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -11,18 +8,17 @@ import org.apache.logging.log4j.Logger;
 
 public class ShapeObserverImpl implements ShapeObserver {
     private static final Logger log = LogManager.getLogger();
-    @Override
-    public void changeElement(Shape shape) {
+    public void changeElement(Circle circle) {
         Solution solution = new Solution();
-        Point point = shape.getCircle().getPoint();
-        double circleArea = solution.circleArea(shape.getCircle());
-        double circlePerimeter = solution.circlePerimeter(shape.getCircle());
+        Point point = circle.getPoint();
+        double circleArea = solution.circleArea(circle);
+        double circlePerimeter = solution.circlePerimeter(circle);
         String intersectionOfCoordinateAxes = solution.intersectionOfCoordinateAxes
-                (shape.getCircle(), point);
-        ShapeStatistics shapeStatistics = new ShapeStatistics
+                (circle, point);
+        CircleStatistics shapeStatistics = new CircleStatistics
                 (circleArea, circlePerimeter, intersectionOfCoordinateAxes);
-        int shapeId = shape.getId();
-        Warehouse warehouse = Warehouse.getWarehouse();
+        int shapeId = circle.getId();
+        Warehouse warehouse = Warehouse.getInstance();
         try {
             warehouse.replace(shapeId, shapeStatistics);
         } catch (Exception e) {

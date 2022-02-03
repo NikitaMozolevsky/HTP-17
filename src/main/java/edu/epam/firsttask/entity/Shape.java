@@ -9,42 +9,15 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class Shape implements Observable {
+public class Shape {
     private static final Logger log = LogManager.getLogger();
-    private Circle circle;
 
     private int id;
-    private double X;
-    private double Y;
-    private String Radius;
-    private static int arraySize = 3;
-    private double[] shapeParameters = new double[arraySize];
-    private ShapeStatistics shapeStatistics;
-    private CustomRepository customRepository;
-    private List<ShapeObserver> listObservers = new ArrayList<>();
-    {
-        this.id = CustomCounter.generateId();
-    }
-
-    public Shape(Circle circle) {
-        this.circle = circle;
-        this.id = CustomCounter.generateId();
-        customRepository = new CustomRepository();
-        shapeParameters[0] = circle.getRadius();
-        shapeParameters[1] = circle.getPoint().getX();
-        shapeParameters[2] = circle.getPoint().getY();
-    }
 
     public Shape() {
-    }
-
-    public Circle getCircle() {
-        return circle;
-    }
-
-    public void setCircle(Circle circle) {
-        this.circle = circle;
+        this.id = CustomCounter.generateId();
     }
 
     public int getId() {
@@ -55,48 +28,28 @@ public class Shape implements Observable {
         this.id = id;
     }
 
-    public void setElement(int index, Double value) {
-        if (index>=0||index>arraySize) {
-            shapeParameters[index] = value;
-            notifyObservers();
-        }
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "id=" + id +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Shape shape = (Shape) o;
+        return id == shape.id;
     }
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(id);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
-    }
-
-    @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    @Override
-    public void attach(ShapeObserver observer) {
-        listObservers.add(observer);
-    }
-
-    @Override
-    public void detach(ShapeObserver observer) {
-        listObservers.remove(observer);
-    }
-
-    @Override
-    public void notifyObservers() {
-        for (ShapeObserver shapeObserver:
-             listObservers) {
-            shapeObserver.changeElement(this);
-        }
+    protected Shape clone() throws CloneNotSupportedException {
+        return (Shape) super.clone();
     }
 }

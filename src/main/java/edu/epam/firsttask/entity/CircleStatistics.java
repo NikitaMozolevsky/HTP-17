@@ -1,11 +1,11 @@
 package edu.epam.firsttask.entity;
 
-public class ShapeStatistics {
+public class CircleStatistics {
     private double circleArea;
     private double circlePerimeter;
     private String intersectionOfCoordinateAxes;
 
-    public ShapeStatistics(double circleArea, double circlePerimeter, String intersectionOfCoordinateAxes) {
+    public CircleStatistics(double circleArea, double circlePerimeter, String intersectionOfCoordinateAxes) {
         this.circleArea = circleArea;
         this.circlePerimeter = circlePerimeter;
         this.intersectionOfCoordinateAxes = intersectionOfCoordinateAxes;

@@ -1,5 +1,7 @@
 package edu.epam.firsttask.entity;
 
+import java.util.Objects;
+
 public class Point {
 
     private double x;
@@ -28,26 +30,27 @@ public class Point {
 
     @Override
     public int hashCode() {
-        return super.hashCode();
+        return Objects.hash(x, y);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        return super.equals(obj);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return Double.compare(point.x, x) == 0 && Double.compare(point.y, y) == 0;
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected Point clone() throws CloneNotSupportedException {
+        return (Point) super.clone();
     }
 
     @Override
     public String toString() {
-        return super.toString();
-    }
-
-    @Override
-    protected void finalize() throws Throwable {
-        super.finalize();
+        return "Point{" +
+                "x=" + x +
+                ", y=" + y +
+                '}';
     }
 }

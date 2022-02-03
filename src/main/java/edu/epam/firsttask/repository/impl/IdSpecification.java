@@ -1,6 +1,6 @@
 package edu.epam.firsttask.repository.impl;
 
-import edu.epam.firsttask.entity.Shape;
+import edu.epam.firsttask.entity.Circle;
 import edu.epam.firsttask.repository.Specification;
 
 public class IdSpecification implements Specification {
@@ -12,12 +12,12 @@ public class IdSpecification implements Specification {
     private int id;
 
     @Override
-    public boolean specify(Shape shape) {
-        return id == shape.getId();
+    public boolean specify(Circle circle) {
+        return id == circle.getId();
     }
 
-    @Override
+    /*@Override
     public boolean checkRadius(Shape shape) {
         return shape.getCircle().getRadius()>10.0;
-    }
+    }*/
 }
