@@ -1,19 +1,22 @@
-package edu.epam.firsttask.observer;
+package edu.epam.firsttask.observer.impl;
 
 import edu.epam.firsttask.entity.*;
-import edu.epam.firsttask.solution.Solution;
+import edu.epam.firsttask.observer.ShapeEvent;
+import edu.epam.firsttask.observer.ShapeObserver;
+import edu.epam.firsttask.service.impl.CustomSolutionImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class ShapeObserverImpl implements ShapeObserver {
     private static final Logger log = LogManager.getLogger();
-    public void changeElement(Circle circle) {
-        Solution solution = new Solution();
+    public void changeElement(ShapeEvent shapeEvent) {
+        Circle circle = shapeEvent.getSource();
+        CustomSolutionImpl customSolutionImpl = new CustomSolutionImpl();
         Point point = circle.getPoint();
-        double circleArea = solution.circleArea(circle);
-        double circlePerimeter = solution.circlePerimeter(circle);
-        String intersectionOfCoordinateAxes = solution.intersectionOfCoordinateAxes
+        double circleArea = customSolutionImpl.circleArea(circle);
+        double circlePerimeter = customSolutionImpl.circlePerimeter(circle);
+        String intersectionOfCoordinateAxes = customSolutionImpl.intersectionOfCoordinateAxes
                 (circle, point);
         CircleStatistics shapeStatistics = new CircleStatistics
                 (circleArea, circlePerimeter, intersectionOfCoordinateAxes);

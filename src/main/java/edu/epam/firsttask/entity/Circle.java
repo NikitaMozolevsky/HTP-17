@@ -6,11 +6,10 @@ import edu.epam.firsttask.observer.ShapeObserver;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Circle extends Shape implements Observable {
+public class Circle extends Shape {
 
     private Point point;
     private double radius;
-    private List<ShapeObserver> listObservers = new ArrayList<>();
     //circleGetID
 
     public Circle(Point point, double radius) {
@@ -34,23 +33,5 @@ public class Circle extends Shape implements Observable {
     public void setPoint(Point point) {
         this.point = point;
         notifyObservers();
-    }
-
-    @Override
-    public void attach(ShapeObserver observer) {
-        listObservers.add(observer);
-    }
-
-    @Override
-    public void detach(ShapeObserver observer) {
-        listObservers.remove(observer);
-    }
-
-    @Override
-    public void notifyObservers() {
-        for (ShapeObserver shapeObserver:
-                listObservers) {
-            shapeObserver.changeElement(this);
-        }
     }
 }

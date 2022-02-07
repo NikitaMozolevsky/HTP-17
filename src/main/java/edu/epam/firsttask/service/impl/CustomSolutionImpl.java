@@ -1,11 +1,12 @@
-package edu.epam.firsttask.solution;
+package edu.epam.firsttask.service.impl;
 
 import edu.epam.firsttask.entity.Circle;
 import edu.epam.firsttask.entity.Point;
+import edu.epam.firsttask.service.CustomSolution;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Solution {
+public class CustomSolutionImpl implements CustomSolution {
 
     private static final Logger log = LogManager.getLogger();
 

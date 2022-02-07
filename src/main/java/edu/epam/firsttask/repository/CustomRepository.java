@@ -3,6 +3,7 @@ package edu.epam.firsttask.repository;
 import edu.epam.firsttask.entity.Circle;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class CustomRepository {
@@ -43,8 +44,7 @@ public class CustomRepository {
     }
 
     /*public List<Circle> queryStream(Specification specification) {
-        List<Circle> circleList = new ArrayList<>();
-        Stream stream = circleList.stream();
-        stream.filter((x)->specification.specify((Circle) x).
+        return circles.stream().filter(specification::specify)
+                .collect(Collectors.toList());
     }*/
 }
