@@ -1,16 +1,13 @@
 package edu.epam.firsttask.entity;
 
-import edu.epam.firsttask.observer.Observable;
-import edu.epam.firsttask.observer.ShapeObserver;
-
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
 public class Circle extends Shape {
 
     private Point point;
+
     private double radius;
-    //circleGetID
+
 
     public Circle(Point point, double radius) {
         this.point = point;
@@ -33,5 +30,24 @@ public class Circle extends Shape {
     public void setPoint(Point point) {
         this.point = point;
         notifyObservers();
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Circle{" + "point=").append(point).append(", radius=").append(radius).append('}');
+        return String.valueOf(stringBuilder);
+    }
+
+    public boolean equals(Circle circle) {
+        if (this == circle) return true;
+        if (circle == null || getClass() != circle.getClass()) return false;
+        if (!super.equals(circle)) return false;
+        return Double.compare(circle.radius, radius) == 0 && Objects.equals(point, circle.point);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), point, radius);
     }
 }

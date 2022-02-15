@@ -30,7 +30,7 @@ public class SolutionTest {
 
     @Test
     public void intersectionOfCoordinateAxesTest() {
-        String actual = customSolutionImpl.intersectionOfCoordinateAxes(circle, point);
+        String actual = customSolutionImpl.intersectionOfCoordinateAxes(circle);
         String expected = result;
         assertEquals(actual, expected);
     }

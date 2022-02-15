@@ -17,7 +17,7 @@ public class ShapeObserverImpl implements ShapeObserver {
         double circleArea = customSolutionImpl.circleArea(circle);
         double circlePerimeter = customSolutionImpl.circlePerimeter(circle);
         String intersectionOfCoordinateAxes = customSolutionImpl.intersectionOfCoordinateAxes
-                (circle, point);
+                (circle);
         CircleStatistics shapeStatistics = new CircleStatistics
                 (circleArea, circlePerimeter, intersectionOfCoordinateAxes);
         int shapeId = circle.getId();

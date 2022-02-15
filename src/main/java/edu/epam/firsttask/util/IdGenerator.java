@@ -1,6 +1,10 @@
 package edu.epam.firsttask.util;
 
-public class CustomCounter {
+public class IdGenerator {
+
+    private IdGenerator() {
+    }
+
     public static int idCounter = -1;
 
     public static int generateId() {

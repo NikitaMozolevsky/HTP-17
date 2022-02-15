@@ -48,9 +48,8 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point{" +
-                "x=" + x +
-                ", y=" + y +
-                '}';
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("Point{" + "x=").append(x).append(", y=").append(y).append('}');
+        return String.valueOf(stringBuilder);
     }
 }

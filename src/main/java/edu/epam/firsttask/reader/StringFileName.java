@@ -1,7 +1,9 @@
 package edu.epam.firsttask.reader;
 
-import java.util.ArrayList;
+import edu.epam.firsttask.exception.CustomException;
+
+import java.io.IOException;
 
 public interface StringFileName {
-    ArrayList<String> reader();
+    String reader(String fileName) throws CustomException, IOException;
 }

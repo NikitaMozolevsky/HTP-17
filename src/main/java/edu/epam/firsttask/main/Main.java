@@ -6,21 +6,28 @@ import edu.epam.firsttask.exception.CustomException;
 import edu.epam.firsttask.parser.impl.StringParserImpl;
 import edu.epam.firsttask.reader.impl.StringFileNameImpl;
 import edu.epam.firsttask.service.impl.CustomSolutionImpl;
+import edu.epam.firsttask.validator.impl.NumberValidatorImpl;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
 import java.util.List;
 
 public class Main {
 
     private static final Logger log = LogManager.getLogger();
 
-    public static void main(String[] args) throws CustomException {
-        StringParserImpl stringParser = new StringParserImpl();
+    public static void main(String[] args) throws CustomException, IOException {
+
+        NumberValidatorImpl numberValidator = new NumberValidatorImpl();
+        System.out.println(numberValidator.validateString("2 99 2 "));
+
+
+        /*StringParserImpl stringParser = new StringParserImpl();
         StringFileNameImpl stringFileName = new StringFileNameImpl();
-        List<String> strings = stringFileName.reader();
-        List<Double> doubles = stringParser.parserToList(strings);
+        String string = stringFileName.reader("data/sent.txt");
+        List<Double> doubles = stringParser.parserToList(string);
         double x = doubles.get(1);
         double y = doubles.get(2);
         double radius = doubles.get(0);
@@ -31,7 +38,7 @@ public class Main {
         log.log(Level.INFO, "area = {} ;", customSolutionImpl.circleArea(circle));
         customSolutionImpl.circlePerimeter(circle); //вычисление периметра круга
         log.log(Level.INFO, "perimeter = {} ;", customSolutionImpl.circlePerimeter(circle));
-        customSolutionImpl.intersectionOfCoordinateAxes(circle, point);
-        log.log(Level.INFO, "result = {} ;", customSolutionImpl.intersectionOfCoordinateAxes(circle, point));
+        customSolutionImpl.intersectionOfCoordinateAxes(circle);
+        log.log(Level.INFO, "result = {} ;", customSolutionImpl.intersectionOfCoordinateAxes(circle));*/
     }
 }

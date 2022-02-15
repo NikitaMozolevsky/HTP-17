@@ -96,3 +96,9 @@
 2022-01-25 19:47:13 [main] INFO  edu.epam.firsttask.main.Main - area = 314.1592653589793 ;
 2022-01-25 19:47:13 [main] INFO  edu.epam.firsttask.main.Main - perimeter = 62.83185307179586 ;
 2022-01-25 19:47:13 [main] INFO  edu.epam.firsttask.main.Main - result = X and Y axes intersect ;
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect
+2022-02-10 20:28:06 [main] ERROR epam.firsttask.validator.impl.NumberValidatorImpl - String incorrect

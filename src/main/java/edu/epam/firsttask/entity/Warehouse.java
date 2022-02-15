@@ -27,11 +27,11 @@ public class Warehouse {
         return warehouse;
     }
 
-    public static CircleStatistics put(Integer key, CircleStatistics value) {
+    public CircleStatistics put(Integer key, CircleStatistics value) {
         return getMap().put(key, value);
     }
 
-    public static CircleStatistics remove(Object key) {
+    public CircleStatistics remove(Object key) {
         return getMap().remove(key);
     }
 

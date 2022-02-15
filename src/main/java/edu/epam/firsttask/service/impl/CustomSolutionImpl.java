@@ -23,10 +23,10 @@ public class CustomSolutionImpl implements CustomSolution {
 
     }
 
-    public String intersectionOfCoordinateAxes (Circle circle, Point point) {
+    public String intersectionOfCoordinateAxes (Circle circle) {
         String result;
-        boolean xAxisCrossing = Math.abs(point.getX())<circle.getRadius();
-        boolean yAxisCrossing = Math.abs(point.getY())<circle.getRadius();
+        boolean xAxisCrossing = Math.abs(circle.getPoint().getX())<circle.getRadius();
+        boolean yAxisCrossing = Math.abs(circle.getPoint().getY())<circle.getRadius();
         if (xAxisCrossing&&yAxisCrossing) {
             result = "X and Y axes intersect";
         }  else if (xAxisCrossing) {

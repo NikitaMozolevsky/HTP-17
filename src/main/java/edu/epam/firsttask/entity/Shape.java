@@ -3,7 +3,7 @@ package edu.epam.firsttask.entity;
 import edu.epam.firsttask.observer.Observable;
 import edu.epam.firsttask.observer.ShapeEvent;
 import edu.epam.firsttask.observer.ShapeObserver;
-import edu.epam.firsttask.util.CustomCounter;
+import edu.epam.firsttask.util.IdGenerator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -11,14 +11,14 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class Shape implements Observable {
+public abstract class Shape implements Observable {
     private static final Logger log = LogManager.getLogger();
 
     private int id;
     private List<ShapeObserver> listObservers = new ArrayList<>();
 
     public Shape() {
-        this.id = CustomCounter.generateId();
+        this.id = IdGenerator.generateId();
     }
 
     public int getId() {
@@ -31,9 +31,11 @@ public class Shape implements Observable {
 
     @Override
     public String toString() {
-        StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("Shape{" + "id=").append(id).append('}');
-        return String.valueOf(stringBuilder);
+        final StringBuilder sb = new StringBuilder("Shape{");
+        sb.append("id=").append(id);
+        sb.append(", listObservers=").append(listObservers);
+        sb.append('}');
+        return sb.toString();
     }
 
     @Override
@@ -41,8 +43,14 @@ public class Shape implements Observable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Shape shape = (Shape) o;
-        return id == shape.id;
+        return id == shape.id && Objects.equals(listObservers, shape.listObservers);
     }
+
+    /*public boolean equals(Shape shape) {
+        if (this == shape) return true;
+        if (shape == null || getClass() != shape.getClass()) return false;
+        return id == shape.id;
+    }*/
 
     @Override
     public int hashCode() {
