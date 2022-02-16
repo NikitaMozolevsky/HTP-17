@@ -7,7 +7,7 @@ import org.apache.logging.log4j.Logger;
 public class NumberValidatorImpl implements NumberValidator {
 
     private static final String REGEXP_STRING_VALIDATOR
-            = "^\\s*-?\\d{3}(\\s+(-?\\d{1,3}))*\\s*$";
+            = "^\\s+\\d+\\s+\\d+\\s+\\d+\\s+$";/*"^\\s*-?\\d{3}(\\s+(-?\\d{1,3}))*\\s*$"*/;
             /*"^\\s*-?\\d{3}(\\s+(-?\\d{1,3}))*\\s*$"*/ //строка содержит 3 цифровых символа
 
     @Override

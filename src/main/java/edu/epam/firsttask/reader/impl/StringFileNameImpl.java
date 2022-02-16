@@ -34,9 +34,9 @@ public class StringFileNameImpl implements StringFileName {
         BufferedReader bufferedReader = new BufferedReader(fileReader);
         while ((string = bufferedReader.readLine()) != null) {
             if (numberValidator.validateString(string)) {
-                bufferedReader.close();
+                return string;
             }
         }
-        return string;
+        throw new CustomException();
     }
 }
